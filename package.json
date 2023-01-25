@@ -1,0 +1,21 @@
+{
+  "name": "yourcombinationsjs",
+  "version": "1.0.0",
+  "description": "An efficient combinatorics library for JavaScript to generate and get the list of all **Permutations** and **Combinations** with the ability to enable or disable repetition. (utilizing ES2015 generators)",
+  "type": "module",
+  "main": "YourCombinations.js",
+  "scripts": {
+    "example": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaseMax/YourCombinationsJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaseMax/YourCombinationsJS/issues"
+  },
+  "homepage": "https://github.com/BaseMax/YourCombinationsJS#readme"
+}

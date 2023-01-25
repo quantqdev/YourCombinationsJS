@@ -6,47 +6,56 @@
  */
 
 class YourCombinations {
-	constructor(elements) {
-		this.elements = elements;
-	}
-	
-	*powerSet() {
-		const size = 2n ** BigInt(this.elements.length); 
-		
-		for (let i = 0; i < size; i++) {
-			const cur = [];
-			for(let j = 0; j < this.elements.length; j++) if((i & (1 << j)) > 0) cur.push(this.elements[j]);
-			yield cur;
-		} 
-	}
+  constructor(elements) {
+    this.elements = elements;
+  }
 
-	*combinations(length, with_repetition = false, position = 0, elements = []) {
-		const size = this.elements.length;
-		
-		for (let i = position; i < size; i++) {
-			elements.push(this.elements[i]);
+  *powerSet() {
+    const size = 2n ** BigInt(this.elements.length);
 
-			if (elements.length === length) yield elements;
-			else yield* this.combinations(length, with_repetition, (with_repetition === true ? i : i + 1), elements);
-			
-			elements.pop();
-		}
-	}
+    for (let i = 0; i < size; i++) {
+      const cur = [];
+      for (let j = 0; j < this.elements.length; j++)
+        if ((i & (1 << j)) > 0) cur.push(this.elements[j]);
+      yield cur;
+    }
+  }
 
-	*permutations(length, with_repetition = false, elements = [], keys = []) {
-		for (const key in this.elements) {
-			const value = this.elements[key];
+  *combinations(length, with_repetition = false, position = 0, elements = []) {
+    const size = this.elements.length;
 
-			if (with_repetition === false) if (keys.indexOf(key) !== -1) continue;
+    for (let i = position; i < size; i++) {
+      elements.push(this.elements[i]);
 
-			keys.push(key);
-			elements.push(value);
-			
-			if (elements.length === length) yield elements;
-			else yield* this.permutations(length, with_repetition, elements, keys);
-			
-			keys.pop();
-			elements.pop();
-		}
-	}
+      if (elements.length === length) yield elements;
+      else
+        yield* this.combinations(
+          length,
+          with_repetition,
+          with_repetition === true ? i : i + 1,
+          elements
+        );
+
+      elements.pop();
+    }
+  }
+
+  *permutations(length, with_repetition = false, elements = [], keys = []) {
+    for (const key in this.elements) {
+      const value = this.elements[key];
+
+      if (with_repetition === false) if (keys.indexOf(key) !== -1) continue;
+
+      keys.push(key);
+      elements.push(value);
+
+      if (elements.length === length) yield elements;
+      else yield* this.permutations(length, with_repetition, elements, keys);
+
+      keys.pop();
+      elements.pop();
+    }
+  }
 }
+
+export default YourCombinations;

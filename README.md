@@ -16,7 +16,7 @@ An efficient combinatorics library for JavaScript to generate and get the list o
 
 ```javascript
 const your_combinations = new YourCombinations([1, 2, 3]);
-[...your_your_combinations.powerSet()]
+[...your_combinations.powerSet()]
 
 // [
 //   [],       [ 1 ],
@@ -30,7 +30,7 @@ const your_combinations = new YourCombinations([1, 2, 3]);
 
 ```javascript
 const your_combinations = new YourCombinations([1, 2, 3]);
-your_your_combinations.permutations(4, true);
+your_combinations.permutations(4, true);
 
 // [ 1, 1, 1, 1 ]
 // [ 1, 1, 1, 2 ]
@@ -119,7 +119,7 @@ your_your_combinations.permutations(4, true);
 
 ```javascript
 const your_combinations = new YourCombinations([1, 2, 3]);
-your_your_combinations.permutations(2, false);
+your_combinations.permutations(2, false);
 
 // [ 1, 2 ]
 // [ 1, 3 ]
@@ -133,7 +133,7 @@ your_your_combinations.permutations(2, false);
 
 ```javascript
 const your_combinations = new YourCombinations([1, 2, 3]);
-your_your_combinations.your_combinations(4, true);
+your_combinations.combinations(4, true);
 
 // [ 1, 1, 1, 1 ]
 // [ 1, 1, 1, 2 ]
@@ -156,7 +156,7 @@ your_your_combinations.your_combinations(4, true);
 
 ```javascript
 const your_combinations = new YourCombinations([1, 2, 3]);
-your_your_combinations.your_combinations(2, false);
+your_combinations.combinations(2, false);
 
 // [ 1, 2 ]
 // [ 1, 3 ]
